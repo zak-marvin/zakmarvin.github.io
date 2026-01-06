@@ -30,9 +30,12 @@
 
 </head>
 <script src="https://cdn.emailjs.com/sdk/3.2/email.min.js"></script>
+<!-- Include EmailJS SDK -->
+<script src="https://cdn.emailjs.com/sdk/3.2/email.min.js"></script>
+
 <script>
-  // Initialize EmailJS with your public key
-  emailjs.init(WtXVeqN3rMf7LPzz6); // Replace with your EmailJS Public Key
+  // Initialize EmailJS
+  emailjs.init('WtXVeqN3rMf7LPzz6'); // Your Public Key
 
   const form = document.getElementById('contact-form');
   const status = document.getElementById('form-status');
@@ -41,7 +44,7 @@
     e.preventDefault(); // Prevent page reload
 
     // Send the form
-    emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this)
+    emailjs.sendForm('service_1ti3vwq', 'template_uuyq9au', this)
       .then(() => {
         status.textContent = "Message sent successfully!";
         status.classList.remove('error');
@@ -644,26 +647,27 @@ Through this internship, I applied technical skills in practical settings and le
         </div>
       </div><!-- End Info Cards -->
 
-      <!-- Contact Form -->
-      <div class="col-lg-7">
-        <form id="contact-form" class="contact-form" data-aos="fade-up" data-aos-delay="500">
-          <div class="row gy-3">
-            <div class="col-md-6">
-              <input type="text" name="from_name" class="form-control" placeholder="Your Name" required>
-            </div>
-            <div class="col-md-6">
-              <input type="email" name="from_email" class="form-control" placeholder="Your Email" required>
-            </div>
-            <div class="col-12">
-              <textarea name="message" class="form-control" rows="6" placeholder="Your Message" required></textarea>
-            </div>
-            <div class="col-12 text-center">
-              <button type="submit" class="btn btn-primary">Send Message</button>
-            </div>
-            <div class="col-12 text-center" id="form-status" style="font-weight:600; margin-top:10px;"></div>
-          </div>
-        </form>
-      </div><!-- End Contact Form -->
+    <!-- Contact Form -->
+<div class="col-lg-7">
+  <form id="contact-form" class="contact-form" data-aos="fade-up" data-aos-delay="500">
+    <div class="row gy-3">
+      <div class="col-md-6">
+        <input type="text" name="from_name" class="form-control" placeholder="Your Name" required>
+      </div>
+      <div class="col-md-6">
+        <input type="email" name="from_email" class="form-control" placeholder="Your Email" required>
+      </div>
+      <div class="col-12">
+        <textarea name="message" class="form-control" rows="6" placeholder="Your Message" required></textarea>
+      </div>
+      <div class="col-12 text-center">
+        <button type="submit" class="btn btn-primary">Send Message</button>
+      </div>
+      <div class="col-12 text-center" id="form-status" style="font-weight:600; margin-top:10px;"></div>
+    </div>
+  </form>
+</div>
+
 
     </div>
 

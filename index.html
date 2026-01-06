@@ -31,6 +31,51 @@
 </head>
 <script src="https://cdn.emailjs.com/sdk/3.2/email.min.js"></script>
 <!-- Include EmailJS SDK -->
+<!-- Include EmailJS SDK -->
+<script src="https://cdn.emailjs.com/sdk/3.2/email.min.js"></script>
+
+<script>
+  // Initialize EmailJS with your public key
+  emailjs.init('WtXVeqN3rMf7LPzz6'); // Replace with your EmailJS Public Key
+
+  // Get references to the form and status div
+  const form = document.getElementById('contact-form');
+  const status = document.getElementById('form-status');
+
+  // Listen for form submission
+  form.addEventListener('submit', function(e) {
+    e.preventDefault(); // Prevent page reload
+
+    // Send the form data to EmailJS
+    emailjs.sendForm('service_1ti3vwq', 'template_uuyq9au', this)
+      .then(() => {
+        // Success message
+        status.textContent = "Message sent successfully!";
+        status.classList.remove('error');
+        status.classList.add('success');
+
+        // Reset the form
+        form.reset();
+      }, (err) => {
+        // Error message
+        status.textContent = "Failed to send message. Please try again.";
+        status.classList.remove('success');
+        status.classList.add('error');
+        console.error('EmailJS error:', err);
+      });
+  });
+</script>
+
+<style>
+  /* Optional styling for success/error messages */
+  #form-status.success {
+    color: green;
+  }
+  #form-status.error {
+    color: red;
+  }
+</style>
+
 
 
 

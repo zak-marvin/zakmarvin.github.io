@@ -31,31 +31,7 @@
 </head>
 <script src="https://cdn.emailjs.com/sdk/3.2/email.min.js"></script>
 <!-- Include EmailJS SDK -->
-<script src="https://cdn.emailjs.com/sdk/3.2/email.min.js"></script>
 
-<script>
-  // Initialize EmailJS
-  emailjs.init('WtXVeqN3rMf7LPzz6'); // Your Public Key
-
-  const form = document.getElementById('contact-form');
-  const status = document.getElementById('form-status');
-
-  form.addEventListener('submit', function(e) {
-    e.preventDefault(); // Prevent page reload
-
-    // Send the form
-    emailjs.sendForm('service_1ti3vwq', 'template_uuyq9au', this)
-      .then(() => {
-        status.textContent = "Message sent successfully!";
-        status.classList.remove('error');
-        form.reset();
-      }, (err) => {
-        status.textContent = "Failed to send message. Please try again.";
-        status.classList.add('error');
-        console.error(err);
-      });
-  });
-</script>
 
 
 
@@ -632,7 +608,7 @@ Through this internship, I applied technical skills in practical settings and le
           <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
             <i class="bi bi-telephone flex-shrink-0"></i>
             <div>
-              <h3>Call Us</h3>
+              <h3>Call Us/ Whatsapp</h3>
               <p>+256 765 201 756</p>
             </div>
           </div><!-- End Info Item -->
@@ -652,13 +628,13 @@ Through this internship, I applied technical skills in practical settings and le
   <form id="contact-form" class="contact-form" data-aos="fade-up" data-aos-delay="500">
     <div class="row gy-3">
       <div class="col-md-6">
-        <input type="text" name="from_name" class="form-control" placeholder="Your Name" required>
+        <input type="text" id="name" name="from_name" class="form-control" placeholder="Your Name" required>
       </div>
       <div class="col-md-6">
-        <input type="email" name="from_email" class="form-control" placeholder="Your Email" required>
+        <input type="email" id="email"name="from_email" class="form-control" placeholder="Your Email" required>
       </div>
       <div class="col-12">
-        <textarea name="message" class="form-control" rows="6" placeholder="Your Message" required></textarea>
+        <textarea name="message" id="message" class="form-control" rows="6" placeholder="Your Message" required></textarea>
       </div>
       <div class="col-12 text-center">
         <button type="submit" class="btn btn-primary">Send Message</button>
